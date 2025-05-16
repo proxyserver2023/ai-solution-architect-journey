@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.11.3",
+    "ai": "^4.3.15"
+  }
+}
