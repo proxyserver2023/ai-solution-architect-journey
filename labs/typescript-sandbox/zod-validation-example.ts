@@ -19,10 +19,12 @@ const users: unknown[] = [
 
 users.forEach((data, index) => {
   const result = userSchema.safeParse(data);
+
   if (result.success) {
-    const user: User = result.data
-    console.log("Succeeded!")
+    const user: User = result.data;
+    console.log(`✅ User ${index} is valid:`, user);
   } else {
-    console.error('Validation Failed', result.error.format());
+    console.log(`❌ User ${index} is invalid:`, result.error.format());
   }
+
 });
