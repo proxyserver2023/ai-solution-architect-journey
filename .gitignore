@@ -1,0 +1,25 @@
+# Node.js common ignores
+**/node_modules/
+**/dist/
+**/coverage/
+**/.next/
+**/.cache/
+
+# OS generated
+.DS_Store
+Thumbs.db
+
+# Logs
+**/logs/
+**/*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+
+# Environment files
+**/.env
+**/.env.*
+
+# Don't ignore example template
+!**/.env.example
