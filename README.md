@@ -91,6 +91,8 @@ ai-solution-architect-journey/
 
 ## 🛠️ Getting Started
 
+Quickly bootstrap a typescript project for quick prototyping.
+
 ```sh
 npm init -y
 npm install ai @ai-sdk/xai typescript ts-node dotenv
