@@ -1,0 +1,17 @@
+{
+  "name": "mcp-client",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch client.ts"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "description": "Demo MCP Client calling MCP Server",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.7.0",
+    "dotenv": "^16.5.0",
+    "openai": "^4.100.0",
+    "ts-node": "^10.9.2"
+  }
+}

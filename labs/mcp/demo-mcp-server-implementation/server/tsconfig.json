@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true, // Ensures ESM and CJS imports work together well
+    "skipLibCheck": true, // Ensures .d.ts files from 3rd libraries are not type-checked
+    "target": "ES2022", // Sets a relatively modern ECMAScript version as compilation target
+    "allowJs": true, // Allows importing .js files into .ts (helpful when migrating projects)
+    "strict": true, // Ensures strict type checking (i.e., noImplicitAny etc)
+    "noUncheckedIndexedAccess": true, // Adds undefined as a value when accessing by index
+    // "noImplicitOverride": true, // Enable this when working with classes & inheritance
+    "noUnusedLocals": true, // to avoid unused variables
+    "module": "NodeNext", // Supports both ESM & CJS modules / imports; ESNext for frontend projects
+    "outDir": "dist", // Store compiled files in "dist" folder
+    "sourceMap": true, // Enables source maps for easier debugging
+    "lib": ["ES2022", "DOM", "DOM.Iterable"] // Or without "dom" libs when building for Node
+  }
+}

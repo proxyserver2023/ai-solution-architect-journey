@@ -1,0 +1,16 @@
+{
+  "name": "mcp-server",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch server.ts"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "description": "Demo MCP Server consuming a dummy knowledge service",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.7.0",
+    "typescript": "^5.8.3",
+    "zod": "^3.24.2"
+  }
+}
