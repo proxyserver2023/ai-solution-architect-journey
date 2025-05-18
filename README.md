@@ -65,6 +65,50 @@ This repository is a comprehensive resource for learning, practicing, and master
 > User: "Find all transactions above $1000"
 > AI Assistant: "Using the filter resource... Found 23 transactions matching your criteria."
 
+
+### MCP Tools
+
+#### File Operations
+
+```
+name: "write-file"
+arguments: {
+  path: "/logs/report.txt",
+  content: "Daily summary..."
+}
+```
+
+> User: Save this report to a file”
+
+> AI: I’ll use the write-file tool… File has been saved successfully.
+
+API Interactions
+```
+name: "fetch-weather"
+arguments: {
+  location: "San Francisco",
+  units: "celsius"
+}
+```
+
+> User: What’s the weather in San Francisco?
+
+> AI: Let me check… According to the weather API, it’s 18°C and sunny.
+
+Data Processing
+
+```
+name: "analyze-data"
+arguments: {
+  dataset: "sales_2024_q1",
+  operation: "summary_stats"
+}
+```
+
+> User: Calculate the summary statistics for Q1 sales
+
+> AI: Running analysis… Average sale was 342, median 342, …
+
 ## 📁 Directory Structure
 
 ```
