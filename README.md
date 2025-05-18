@@ -34,7 +34,7 @@ This repository is a comprehensive resource for learning, practicing, and master
 
 ---
 
-## MCP Use Cases
+## MCP
 
 ### Resource Templates
 
@@ -108,6 +108,85 @@ arguments: {
 > User: Calculate the summary statistics for Q1 sales
 
 > AI: Running analysis… Average sale was 342, median 342, …
+
+### Transport
+
+#### SSE Transport
+
+**What is SSEServerTransport?**
+
+SSEServerTransport is a transport layer implementation that enables real-time, bidirectional communication between an MCP server and client using Server-Sent Events combined with HTTP POST requests.
+
+**How SSE Transport Works**
+
+Bidirectional Communication Pattern:
+
+- Server → Client: Uses SSE (Server-Sent Events) for real-time streaming
+- Client → Server: Uses HTTP POST requests for sending messages
+
+**Code Breakdown**
+1. SSE Endpoint (/sse)
+
+```javascript
+app.get("/sse", async (req, res) => {
+  transport = new SSEServerTransport("/messages", res);
+  await server.connect(transport);
+});
+```
+
+What happens here:
+
+Client makes GET request to /sse to establish the SSE connection
+Creates a new SSEServerTransport instance with:
+
+- "/messages": The endpoint where client will POST messages
+- res: The response object for streaming events to client
+
+
+Connects the MCP server to this transport
+The response stays open, allowing server to push events to client
+
+2. Message Handling Endpoint (/messages)
+
+```javascript
+app.post("/messages", async (req, res) => {
+  await transport.handlePostMessage(req, res);
+});
+```
+What happens here:
+
+- Client sends messages via POST to /messages
+- Transport processes the incoming message
+- Response is sent back to client
+- This completes the client → server communication
+
+
+**Key Features**
+
+Real-time Communication: Server can push messages instantly to client
+HTTP-based: Works through firewalls and proxies
+Automatic Reconnection: SSE provides built-in reconnection handling
+Bidirectional: Despite SSE being unidirectional, POST requests enable full duplex
+
+**Connection Flow**
+
+Client connects: GET /sse → establishes SSE stream
+Server ready: MCP server connects to transport
+Client sends message: POST /messages → processed by transport
+Server responds: Response sent via SSE stream to client
+
+**Typical Message Flow**
+
+```
+Client                    Server
+  |                         |
+  |--- GET /sse ----------->|  (establish SSE)
+  |<-- SSE stream ---------|  (keep connection open)
+  |                         |
+  |--- POST /messages ----->|  (send message)
+  |<-- HTTP response -------|  (immediate response)
+  |<-- SSE event ----------|  (async server message)
+```
 
 ## 📁 Directory Structure
 
