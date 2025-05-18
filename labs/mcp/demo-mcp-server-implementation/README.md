@@ -71,7 +71,7 @@ npm run dev
 2. Start the MCP server:
 ```bash
 cd server
-npm run dev
+npm run dev # If this fails, Check the dist folder, there should be already compiled JS
 ```
 
 3. Run the client (choose one):

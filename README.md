@@ -34,6 +34,37 @@ This repository is a comprehensive resource for learning, practicing, and master
 
 ---
 
+## MCP Use Cases
+
+### Resource Templates
+
+#### Dynamic Data
+```
+"users://{userId}" -> User profiles
+"products://{sku}" -> Product information
+```
+
+> User: "Can you tell me about user 12345?"
+> AI Assistant: "Looking up user 12345... They joined in 2023 and have made 50 purchases."
+
+#### Generate Content On-Demand
+```
+"reports://{year}/{month}" -> Monthly reports
+"analytics://{dateRange}" -> Custom analytics
+```
+
+> User: "Show me the report for March 2024"
+> AI Assistant: "Accessing March 2024 report... Revenue was up 15% compared to February."
+
+#### Parameter-Based Resources
+```
+"search://{query}" -> Search results
+"filter://{type}/{value}" -> Filtered data
+```
+
+> User: "Find all transactions above $1000"
+> AI Assistant: "Using the filter resource... Found 23 transactions matching your criteria."
+
 ## 📁 Directory Structure
 
 ```
